@@ -1,5 +1,5 @@
 """
-AHS-AI — RAG Chatbot (Improved with Fallbacks)
+AHS-AI — RAG Chatbot
 """
 
 import os
@@ -91,7 +91,7 @@ if "embedding_model" not in st.session_state:
     st.session_state.embedding_model = None
 
 
-# ── Helper Functions ────────────────────────────────────────────────────────
+# Helper Functions
 
 def get_api_key():
     """Get API key."""
@@ -202,7 +202,7 @@ Context:
         return None, []
 
 
-# ── Sidebar ─────────────────────────────────────────────────────────────────
+# Sidebar 
 
 with st.sidebar:
     st.markdown("## 📊 AHS-AI RAG Chatbot")
