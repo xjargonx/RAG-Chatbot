@@ -22,28 +22,59 @@ st.set_page_config(
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 * { font-family: 'Inter', sans-serif; }
-footer, header { visibility: hidden; }
-.stApp { background: linear-gradient(160deg, #0F0F1A 0%, #161630 40%, #1A1A2E 100%); }
+
+footer { visibility: hidden; }
+
+.stApp { 
+    background: linear-gradient(160deg, #0F0F1A 0%, #161630 40%, #1A1A2E 100%);
+}
+
 section[data-testid="stSidebar"] {
     background: rgba(26, 26, 46, 0.85) !important;
     backdrop-filter: blur(20px);
     border-right: 1px solid rgba(124, 58, 237, 0.15);
 }
+
 .stChatMessage {
     background: rgba(26, 26, 46, 0.6) !important;
     backdrop-filter: blur(12px);
     border: 1px solid rgba(124, 58, 237, 0.12);
     border-radius: 16px !important;
     padding: 1rem 1.25rem !important;
+    animation: fadeSlideIn 0.4s ease-out;
 }
+
+@keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .stButton > button {
     background: linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%) !important;
     color: white !important;
     border: none !important;
     border-radius: 10px !important;
     font-weight: 600 !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
 }
+
+.stButton > button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 24px rgba(124, 58, 237, 0.35) !important;
+}
+
+.stFileUploader > div {
+    border: 2px dashed rgba(124, 58, 237, 0.3) !important;
+    border-radius: 12px !important;
+    background: rgba(124, 58, 237, 0.04) !important;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0F0F1A; }
+::-webkit-scrollbar-thumb { background: #7C3AED; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #6D28D9; }
 </style>
 """, unsafe_allow_html=True)
 
