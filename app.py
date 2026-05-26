@@ -23,7 +23,7 @@ st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 * { font-family: 'Inter', sans-serif; }
-#MainMenu, footer, header { visibility: hidden; }
+footer, header { visibility: hidden; }
 .stApp { background: linear-gradient(160deg, #0F0F1A 0%, #161630 40%, #1A1A2E 100%); }
 section[data-testid="stSidebar"] {
     background: rgba(26, 26, 46, 0.85) !important;
