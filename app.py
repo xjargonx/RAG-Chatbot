@@ -14,7 +14,6 @@ from langchain_qdrant import QdrantVectorStore
 
 st.set_page_config(
     page_title="AHS-AI — RAG Chatbot",
-    page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -205,7 +204,7 @@ Context:
 # Sidebar 
 
 with st.sidebar:
-    st.markdown("## 📊 AHS-AI RAG Chatbot")
+    st.markdown("## AHS-AI RAG Chatbot")
     st.divider()
     
     # API Key input
@@ -223,8 +222,8 @@ with st.sidebar:
             api_key = api_key_input
             st.rerun()
     else:
-        st.success("✅ API key active")
-        with st.expander("🔑 Change API Key"):
+        st.success(" API key active")
+        with st.expander(" Change API Key"):
             new_api_key = st.text_input("New API Key", type="password")
             if new_api_key:
                 os.environ["GOOGLE_API_KEY"] = new_api_key
@@ -234,7 +233,7 @@ with st.sidebar:
     
     # Test embedding models
     if api_key:
-        if st.button("🧪 Test Embedding Models", help="Find which embedding models work with your API key"):
+        if st.button("Test Embedding Models", help="Find which embedding models work with your API key"):
             with st.spinner("Testing embedding models..."):
                 working_model = test_embedding_models(api_key)
                 if working_model:
@@ -261,7 +260,7 @@ with st.sidebar:
     )
     
     if uploaded_files and api_key:
-        if st.button("🚀 Process Documents", use_container_width=True):
+        if st.button(" Process Documents", use_container_width=True):
             # Determine which embedding model to use
             if not st.session_state.embedding_model:
                 with st.spinner("Finding working embedding model..."):
@@ -306,7 +305,7 @@ with st.sidebar:
     
     # Status
     if st.session_state.docs_loaded:
-        st.markdown("### 📊 Status")
+        st.markdown("###  Status")
         st.metric("Chunks Loaded", st.session_state.doc_count)
         if st.session_state.embedding_model:
             st.caption(f"Model: {st.session_state.embedding_model}")
@@ -323,7 +322,7 @@ with st.sidebar:
 
 # ── Main Content ────────────────────────────────────────────────────────────
 
-st.markdown("# 📊 AHS-AI RAG Chatbot")
+st.markdown("#  AHS-AI RAG Chatbot")
 st.markdown("Ask questions about your uploaded PDF documents")
 st.divider()
 
@@ -375,8 +374,8 @@ else:
     
     **Setup Steps:**
     1. Enter your Google API key (get one at https://aistudio.google.com/app/apikey)
-    2. Click "🧪 Test Embedding Models" to verify your key works
+    2. Click " Test Embedding Models" to verify your key works
     3. Upload PDF documents in the sidebar
-    4. Click "🚀 Process Documents"
+    4. Click " Process Documents"
     5. Start asking questions!
     """)
